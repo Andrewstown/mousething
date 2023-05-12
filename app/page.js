@@ -1,18 +1,23 @@
 'use client'
 
-import {useEffect, useState} from "react"
+import {useEffect} from "react"
 
 export default function Home() {
-  const [pools, setPools] = useState([])
-
   let box
+  let field
 
   useEffect(() => {
-    box = document.querySelector("#box")
-    document.addEventListener("click", (e) => {
-      setPools(pools => [...pools, {x: e.x, y: e.y, color: window.getComputedStyle(box).backgroundColor}])
+    box = document.querySelector('#box')
+    field = document.querySelector('#field')
+    field.addEventListener('click', (e) => {
+      let div = document.createElement('div')
+      div.className = 'pool'
+      div.style.top = `${e.y}px`
+      div.style.left = `${e.x}px`
+      div.style.borderColor = window.getComputedStyle(box).backgroundColor
+      field.append(div)
       setTimeout(() => {
-        setPools(pools => (pools.slice(1, pools.length)))
+        field.firstChild.remove()
       }, 800)
     })
   }, [])
@@ -21,8 +26,7 @@ export default function Home() {
     <div id="box"/>
     <img id="lebron" src="./lebron.webp"/>
     <img id="rockstarfreddy" src="./rockstarfreddy.webp"/>
-    {pools.map((pool, i) => (
-      <div className="pool" key={`pool-${i}`} style={{top: `${pool.y}px`, left: `${pool.x}px`, borderColor: pool.color}}/>
-    ))}
+    <div id="field">
+    </div>
   </>)
 }

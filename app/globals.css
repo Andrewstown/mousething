@@ -21,7 +21,8 @@ body {
   width: 100px;
   border: 0px solid black;
   height: 100px;
-  position: absolute;
+  overflow: visible;
+  position: fixed;
   animation: pool 0.8s ease;
   transform: translate(-50%, -50%);
   border-radius: 50%;
@@ -31,6 +32,15 @@ body {
   0%  {width: 0px; border-width: 30px; height: 0px;}
   75% {opacity: 1;}
   100% {width: 200px; border-width: 0px; height: 200px; opacity: 0;}
+}
+
+#field {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+  position: fixed;
 }
 
 #lebron{
