@@ -17,11 +17,10 @@ body {
   100% {background-color: #ff5555;}
 }
 
-.pool{
+.pool {
   width: 100px;
   border: 0px solid black;
   height: 100px;
-  overflow: visible;
   position: fixed;
   animation: pool 0.8s ease;
   transform: translate(-50%, -50%);
@@ -34,6 +33,12 @@ body {
   100% {width: 200px; border-width: 0px; height: 200px; opacity: 0;}
 }
 
+.trail {
+  width: 10px;
+  height: 10px;
+  position: fixed;
+}
+
 #field {
   top: 0px;
   left: 0px;
@@ -43,13 +48,13 @@ body {
   position: fixed;
 }
 
-#lebron{
+#lebron {
   width: 200px;
   bottom: 0%;
   position: fixed;
 }
 
-#rockstarfreddy{
+#rockstarfreddy {
   left: 200px;
   width: 200px;
   bottom: 0%;
